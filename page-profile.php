@@ -1,0 +1,65 @@
+    <!-- header -->
+    <?php get_header(); ?>
+    <main <?php body_class('orignal_class'); ?>>
+        <div class="inner">
+
+            <div class="colum2">
+                <section>
+                    <?php if (have_posts() ): ?>
+                    <!-- もし、記事が1件以上あったら-->
+                    <?php while (have_posts()):the_post(); ?>
+                    <!-- 記事の表示条件で繰り返す（※個別投稿ページの場合は、1回）-->
+                    <article <?php post_class("entry"); ?>> <!-- 特別なclassを付随させる -->
+                    <div class="single">
+                        <h2><div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
+  <?php if(function_exists('bcn_display'))
+    { bcn_display();}
+  ?>
+</div></h2>
+                        <h3 class="entry-title"><a href="<?php the_permalink(); ?>">
+                        <?php the_title(); ?>
+                        </a></h3>
+                        <div class="time">
+                            <p>投稿日: <?php the_time('Y年n月j日'); ?>  <?php the_time('g:i A'); ?><!-- 記事の投稿日 --></p>
+                            <p>更新日: <?php the_modified_date(); ?>  <?php the_modified_time(); ?></p>
+                        </div>
+                        <div class="pagearticle">
+                            <div class="article-image">
+                                <?php if(has_post_thumbnail()): ?>　 <!-- もしアイキャッチ画像があるのであれば、 -->
+                                <?php the_post_thumbnail('large',['alt'=>'サムネイル画像']); ?>
+                                <?php else: ?><!--アイキャッチ画像がない場合は、デフォルトの画像を表示-->
+                                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/thumbnail-default.jpg" alt="デフォルトのアイキャッチ画像" /></p>
+                            <?php endif; ?>
+                        </div>
+                            <div class="entry-content">
+                            <?php the_content( ); ?><!-- 記事の内容 -->
+                        </div>
+                        <div class="singlepage">
+                            <!-- 前後のナビゲーション開始-->
+                            <?php the_post_navigation( array( 'prev_text' => '前の記事へ', 'next_text' => '次の記事へ' ) ); ?>
+                            <!-- 前後のナビゲーション終了 -->
+                        </div>
+                        <!-- コメント開始 -->
+                        <section class="comments">
+                        <?php comments_template(); ?>
+                        </section>
+                        <!-- コメント終了 -->
+
+                        </div>
+                    </div>
+                    </article>
+                    <?php endwhile; ?>
+                    <!-- 繰り返し終了 -->
+
+                    <?php endif; ?>
+                    <!-- if文終了。-->
+
+
+                </section>
+                <?php get_sidebar(); ?>
+            </div>
+        </div>
+    </main>
+    <?php get_footer(); ?>
+    <?php wp_footer(); ?>
+</body>

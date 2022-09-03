@@ -1,0 +1,821 @@
+@charset "utf-8";
+/*共通部分 */
+body{
+    font-size: 14px;
+    background-color: #eefffc;
+    font-family: "Helvetica Neue","Yu Gothic", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Meiryo", sans-serif;
+}
+
+img{
+    max-width: 100%;
+}
+.inner{
+    text-align: center;
+    width: 85.5%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+/* header */
+header{
+    background-color: #299d84;
+}
+header .inner{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    margin-bottom: 50px;
+    align-items: center;
+}
+.headgazou{
+    width: 93px;
+    height: 79px;
+}
+/* main */
+/* icon */
+nav ul{
+    display: flex;
+}
+.fastnav{
+    margin: 20px 0;
+    display: flex;
+    justify-content: flex-end;
+}
+.fastnav nav ul li{
+    margin-left: 20px;
+}
+li{
+    list-style: none;
+}
+/* index.html */
+/* 画像が動く所*/
+.slider {/*横幅94%で左右に余白を持たせて中央寄せ*/
+    width:94%;
+    margin:0 auto;
+}
+
+.slider img {
+    width: 200px;/*スライダー内の画像を60vwにしてレスポンシブ化*/
+    height:auto;
+}
+
+.slider .slick-slide {
+	transform: scale(0.8);/*左右の画像のサイズを80%に*/
+	transition: all .5s;/*拡大や透過のアニメーションを0.5秒で行う*/
+	opacity: 0.5;/*透過50%*/
+}
+
+.slider .slick-slide.slick-center{
+	transform: scale(1);/*中央の画像のサイズだけ等倍に*/
+	opacity: 1;/*透過なし*/
+}
+
+
+/*矢印の設定*/
+
+/*戻る、次へ矢印の位置*/
+.slick-prev,
+.slick-next {
+    position: absolute;/*絶対配置にする*/
+    top: 42%;
+    cursor: pointer;/*マウスカーソルを指マークに*/
+    outline: none;/*クリックをしたら出てくる枠線を消す*/
+    border-top: 2px solid #666;/*矢印の色*/
+    border-right: 2px solid #666;/*矢印の色*/
+    height: 15px;
+    width: 15px;
+}
+
+.slick-prev {/*戻る矢印の位置と形状*/
+    left: -1.5%;
+    transform: rotate(-135deg);
+}
+
+.slick-next {/*次へ矢印の位置と形状*/
+    right: -1.5%;
+    transform: rotate(45deg);
+}
+
+
+/* お試し */
+/* Slider */
+.slick-slider
+{
+    position: relative;
+
+    display: block;
+    box-sizing: border-box;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+        touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list
+{
+    position: relative;
+
+    display: block;
+    overflow: hidden;
+
+    margin: 0;
+    padding: 0;
+}
+.slick-list:focus
+{
+    outline: none;
+}
+.slick-list.dragging
+{
+    cursor: pointer;
+    cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list
+{
+    -webkit-transform: translate3d(0, 0, 0);
+       -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+         -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+}
+
+.slick-track
+{
+    position: relative;
+    top: 0;
+    left: 0;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.slick-track:before,
+.slick-track:after
+{
+    display: table;
+
+    content: '';
+}
+.slick-track:after
+{
+    clear: both;
+}
+.slick-loading .slick-track
+{
+    visibility: hidden;
+}
+
+.slick-slide
+{
+    display: none;
+    float: left;
+
+    height: 100%;
+    min-height: 1px;
+}
+[dir='rtl'] .slick-slide
+{
+    float: right;
+}
+.slick-slide img
+{
+    display: block;
+}
+.slick-slide.slick-loading img
+{
+    display: none;
+}
+.slick-slide.dragging img
+{
+    pointer-events: none;
+}
+.slick-initialized .slick-slide
+{
+    display: block;
+}
+.slick-loading .slick-slide
+{
+    visibility: hidden;
+}
+.slick-vertical .slick-slide
+{
+    display: block;
+
+    height: auto;
+
+    border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+    display: none;
+}
+
+
+
+/* taoru持ってる所 */
+.contents{
+    width: 89px;
+    height: 154px;
+    position: relative;
+    bottom: 2px;
+}
+
+.archive-title{
+        margin: 20px 0;
+        text-align: center;
+    }
+
+/* 記事ページ */
+h3{
+    font-size: 15px;
+    margin: 10px 0 15px;
+    text-align: left;
+}
+.naiyou .inner{
+    text-align: center;
+    width: 60%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.naiyou article p{
+    text-align: left;
+}
+.more a{
+    margin: 10px 0 30px;
+    display: block;
+    text-align: right;
+    text-decoration: none;
+    color: red;
+}
+.more a:hover{
+    color: aqua;
+}
+.article-image{
+    display: flex;
+    justify-content: flex-end;
+    background-position: center center;
+    background-size: cover;
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+}
+.tititle{
+    text-align: left;
+}
+.tititle a{
+    text-decoration: none;
+    color: #000;
+}
+.article-image img{
+    height: auto;
+    width: 100%;
+}
+
+
+/* 数字ボタンの所 */
+.naiyou nav{
+    margin-bottom: 10px;
+    text-align: center;
+}
+.naiyou ul{
+    justify-content: center;
+}
+.naiyou li{
+    margin: 0 10px;
+}
+
+.nav-links .page-numbers {
+    margin:0 5px;
+    padding-top: 3px;
+    color: #fff;
+    display: inline-block;
+    text-decoration: none;
+    background-color: #299d84;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+
+}
+/* footer */
+footer{
+    color: #fff;
+    background-color: #299d84;
+}
+.profile{
+    width: 98%;
+    margin-top: 20px;
+    display: inline-block;
+    padding-top: 20px;
+    text-align: center;
+    color: #000;
+    background-color: #fff;
+    justify-content: space-around;
+}
+
+
+.profile p :first-child{
+    margin: 20px 0;
+}
+.profile1{
+    margin: 10px 0 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.profile2{
+    display: flex;
+}
+.profile2 p{
+    text-align: left;
+}
+.profile2 :nth-child(2){
+    margin-left: 30px;
+    text-align: left;
+}
+.tyanto{
+    margin-bottom: 20px;
+}
+.category li a{
+    color: #fff;
+    display: block;
+    margin: 20px 0 20px;
+    text-decoration: none;
+}
+.cat-item a:hover{
+    color: red;
+}
+.category h3{
+    text-align: center;
+    padding-top: 30px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* .category :nth-child(1){
+    padding-top: 30px;
+    font-weight: bold;
+    font-size: 18px;
+} */
+/* コピーライト */
+small{
+    display: inline-block;
+    margin: 20px 0 20px;
+}
+@media(min-width:600px){
+    /* index.html */
+    .inner{
+    text-align: center;
+    width: 95%;
+    max-width: 100%;
+    margin: 0 auto;
+    }
+
+    h3{
+        width: 100%;
+    }
+
+    .slider img{
+        width: 500px;
+        height: auto;
+    }
+    header img{
+        zoom: 2;
+    }
+    h1 a img{
+        zoom: 1;
+    }
+    main .fa{
+        zoom: 1.5;
+    }
+
+    .contents{
+        zoom: 2;
+    }
+    .naiyou .inner{
+        justify-content: space-between;
+        flex-wrap: wrap;
+        display: flex;
+
+    }
+    .naiyou .inner article{
+        text-align: center;
+        width: 45%;
+        max-width: 100%;
+    }
+    .profile{
+        margin-top: 50px;
+        width: 75%;
+    }
+    .pcfooter .category{
+        margin-top: 50px;
+    }
+    /* .category :nth-child(1){
+        padding-top: 0;
+    } */
+
+    .article-image{
+        display:flex;
+        flex-direction:row-reverse;
+        justify-content: flex-end;
+    }
+
+    .category h3{
+        padding-top: 0;
+    }
+    .pcfooter{
+        margin-bottom: 30px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .nav-links .page-numbers {
+    zoom: 1.5;
+    margin:0 5px;
+    padding-top: 3px;
+    color: #fff;
+    display: inline-block;
+    text-decoration: none;
+    background-color: #299d84;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+
+}
+    /* .naiyou .article-image{
+    display:flex;
+    flex-direction:row-reverse;
+    justify-content: flex-end;
+    width: 300px;
+    height: 200px;
+    max-width: initial;
+    background-position: center center;
+    background-size: cover;
+} */
+}
+/* single.html */
+
+.single{
+    text-align: left;
+}
+.single h1 .breadcrumbs span{
+    font-size: 16px;
+    color: #000;
+    font-weight: normal;
+    }
+.single h1 .breadcrumbs span a{
+    text-decoration: none;
+}
+.single h1 .breadcrumbs :last-child{
+    color: #50b19c;
+}
+.entry-title{
+    font-weight: bold;
+    font-size: 24px;
+    color: #000;
+}
+.time{
+    display: flex;
+    justify-content: left;
+}
+.time p{
+    margin: 0;
+}
+.time :first-child{
+    margin-right: 20px;
+}
+.single h2{
+    color: #fff;
+    margin-top: 25px;
+    padding: 10px;
+    font-size: 16px;
+}
+.pagearticle p{
+    margin: 30px 0 20px;
+}
+
+.pagearticle h2{
+    color: #fff;
+    margin: 25px 0 25px;
+    padding: 10px;
+    background-color: #50b19c;
+}
+.pagearticle h3{
+    color: #fff;
+    margin-top: 25px;
+    padding: 10px;
+    background-color: #56887e;
+    border-radius: 10px;
+}
+.time{
+    margin-bottom: 50px;
+}
+
+.entry-content img{
+    height: auto;
+}
+.entry-content p{
+    font-size: 16px;
+    width: 100%;
+}
+.singlepage{
+    margin: 50px 0;
+}
+.singlepage .nav-links{
+    display: flex;
+    justify-content: space-between;
+}
+.singlepage .nav-links a{
+    color: #50b19c;
+    text-decoration: none;
+}
+.singlepage .nav-links a:hover{
+    color: #000;
+}
+
+.pagearticle .article-image{
+    display: block;
+}
+
+.entry-content img{
+    display: block;
+    width: 100%;
+}
+
+.wp-caption.alignnone{
+    width: 100% !important;
+}
+
+#toc_container{
+    text-align: center;
+    margin: 40px auto;
+}
+figcaption{
+    color: gray;
+    text-align: center;
+}
+
+
+
+/* .comment */
+.comment h3{
+    font-size: 24px;
+    padding: 0;
+    margin-top: 0;
+    color: #000;
+    font-size: 24px;
+    background-color: #eefffc;
+}
+
+.comment-form{
+    background-color: #fff;
+    border: 1px solid #50b19c;
+    border-radius: 10px;
+    margin: 50px 0;
+    padding: 10px;
+}
+.comment-author img{
+    margin-top: 0;
+}
+.comment-reply-title{
+    margin-top: 20px;
+}
+.comment-form-comment label{
+    margin: 10px 0 10px 20px;
+    color: #50b19c;
+}
+.comment-form textarea{
+    display: block;
+    margin-left: 20px;
+    font: 15px/24px sans-serif;
+    box-sizing: border-box;
+    width: 80%;
+    padding: 0.3em;
+    transition: 0.3s;
+    letter-spacing: 1px;
+    color: #000;
+    border: 1px solid #50b19c;
+    box-shadow: 1px 1px 2px 0 #50b19c inset;
+    border-radius: 4px;
+}
+.comment-form-author input{
+    display: block;
+    margin-left: 20px;
+    font: 15px/24px sans-serif;
+    box-sizing: border-box;
+    width: 80%;
+    padding: 0.3em;
+    transition: 0.3s;
+    letter-spacing: 1px;
+    color: #000;
+    border: 1px solid #50b19c;
+    box-shadow: 1px 1px 2px 0 #50b19c inset;
+    border-radius: 4px;
+}
+.comment-form-author label{
+    margin: 10px 0 10px 20px;
+    color: #50b19c;
+}
+.comment-form-email label{
+    margin: 10px 0 10px 20px;
+    color: #50b19c;
+}
+.comment-form-email input{
+    display: block;
+    margin-left: 20px;
+    font: 15px/24px sans-serif;
+    box-sizing: border-box;
+    width: 80%;
+    padding: 0.3em;
+    transition: 0.3s;
+    letter-spacing: 1px;
+    color: #000;
+    border: 1px solid #50b19c;
+    box-shadow: 1px 1px 2px 0 #50b19c inset;
+    border-radius: 4px;
+}
+.comment-form-author label{
+    margin: 10px 0 10px 20px;
+    color: #50b19c;
+}
+.comment-form-url label{
+    margin: 10px 0 10px 20px;
+    color: #50b19c;
+}
+.comment-form-url input{
+    display: block;
+    margin-left: 20px;
+    font: 15px/24px sans-serif;
+    box-sizing: border-box;
+    width: 80%;
+    padding: 0.3em;
+    transition: 0.3s;
+    letter-spacing: 1px;
+    color: #000;
+    border: 1px solid #50b19c;
+    box-shadow: 1px 1px 2px 0 #50b19c inset;
+    border-radius: 4px;
+}
+
+.comment-body{
+    background-color: #fff;
+    padding: 20px 40px;
+
+}
+.comment.byuser.comment-author-kenta_blog.bypostauthor{
+    margin-top: 30px;
+}
+
+.form-submit{
+    text-align: right;
+}
+.form-submit input{
+    text-align: center;
+    width: 50px;
+    margin-right: 20px;
+    padding: 10px 0;
+    display: inline-block;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #50b19c;
+}
+.form-submit input:hover{
+    color: chartreuse;
+}
+table{
+    border: 1px solid #000;
+}
+table th, table td{
+    border: solid 1px #000;
+}
+table th{
+    padding: 10px;
+}
+table td{
+    padding: 3px 10px;
+}
+
+blockquote {
+    position: relative;
+    padding: 10px 15px 10px 60px;
+    box-sizing: border-box;
+    font-style: italic;
+    background: #f5f5f5;
+    color: #777777;
+    border-left: 4px solid #50b19c;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.14);
+}
+
+blockquote:before{
+    display: inline-block;
+    position: absolute;
+    top: 7px;
+    left: 0;
+    content: "“";
+    font-family: sans-serif;
+    color: #50b19c;
+    font-size: 90px;
+    line-height: 1;
+}
+
+blockquote p {
+    padding: 0;
+    margin: 7px 0;
+    line-height: 1.7;
+}
+
+blockquote cite {
+    display: block;
+    text-align: right;
+    color: #888888;
+    font-size: 0.9em;
+}
+
+.colum{
+    display: none;
+}
+@media(min-width:600px){
+    .inner{
+        width: 95%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    .single{
+        width: 100%;
+    }
+    .colum{
+        display: initial;
+    }
+    .colum2{
+        display: flex;
+        justify-content: space-around;
+    }
+    .colum2 section{
+        display: inline;
+        width: 50%;
+    }
+    .colum  section article{
+        width: 250px;
+        color: #fff;
+        background-color: #50b19c;
+    }
+    .colum section article:last-child{
+        margin-top: 50px;
+    }
+    .colum section article a{
+        font-size: 16px;
+        color: #fff;
+        text-decoration: none;
+        display: block;
+        padding: 20px 30px;
+    }
+    .big{
+        padding: 25px 0 15px;
+        font-size: 24px;
+    }
+    .archive{
+        text-align: left;
+    }
+    .sidebarcategory .colum .wp-block-group .wp-block-group__inner-container{
+        margin-bottom: 30px;
+        background-color: #50b19c;
+    }
+
+    .sidebarcategory .colum .wp-block-group .wp-block-group__inner-container h3{
+        margin: 0;
+        width: 250px;
+        color: #fff;
+        text-align: center;
+        padding: 25px 0 15px;
+        font-size: 24px;
+    }
+
+    .footercategory .category .wp-block-group .wp-block-group__inner-container h3{
+        display: inline;
+        font-size: 18px;
+    }
+    .wp-block-group__inner-container a{
+        font-size: 16px;
+        color: #fff;
+        text-decoration: none;
+    }
+    .wp-block-group__inner-container a:hover{
+        color: red;
+    }
+    .wp-block-group__inner-container li{
+        color: #fff;
+        padding-bottom: 20px;
+    }
+    .footercategory:nth-last-child() .colum .wp-block-group{
+        display: none;
+    }
+}
