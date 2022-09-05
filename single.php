@@ -12,10 +12,10 @@
                     <article <?php post_class("entry"); ?>> <!-- 特別なclassを付随させる -->
                     <div class="single">
                         <h1><div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
-                        <?php if(function_exists('bcn_display'))
-                            { bcn_display();}
-                        ?>
-                        </div></h1>
+  <?php if(function_exists('bcn_display'))
+    { bcn_display();}
+  ?>
+</div></h1>
                         <p class="entry-title"><?php the_title(); ?></p>
                         <div class="time">
                             <p>投稿日: <?php the_time('Y年n月j日'); ?>  <?php the_time('g:i A'); ?><!-- 記事の投稿日 --></p>
